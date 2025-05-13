@@ -33,30 +33,34 @@ function predict() {
 	// console.log(sex)
 	// console.log(smoke)
 				
-	if (Long.trim() != "" && parseFloat(Long) >= 1 && parseFloat(Long) <= 10 && parseFloat(DL) > 0 && parseFloat(DL) < 1) {
-		input.push(parseFloat(Long))
-		input.push(parseFloat(texture))
-		input.push(parseFloat(Bubblelike_lucency))
-		input.push(parseFloat(air))
-		input.push(parseFloat(Vascular))
-		input.push(parseFloat(Pleural))
-		input.push(parseFloat(sex))
-		input.push(parseFloat(smoke))
-		fetch('https://d8e4-47-122-73-6.ngrok-free.app/predict', {
+	if (Long.trim() != "" && parseFloat(Long) >= 1 && parseFloat(Long) <= 10) {
+		if(parseFloat(DL) > 0 && parseFloat(DL) < 1){
+			input.push(parseFloat(Long))
+			input.push(parseFloat(texture))
+			input.push(parseFloat(Bubblelike_lucency))
+			input.push(parseFloat(air))
+			input.push(parseFloat(Vascular))
+			input.push(parseFloat(Pleural))
+			input.push(parseFloat(sex))
+			input.push(parseFloat(smoke))
+				fetch('https://d8e4-47-122-73-6.ngrok-free.app/predict', {
 			method: 'POST',
-			headers: {
-			    'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({ data: input })
-		})
-		.then(response => response.json())
-		.then(data => {
+				headers: {
+			    	'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({ data: input })
+			})
+			.then(response => response.json())
+			.then(data => {
 			
-			document.getElementById('prediction').textContent = data.prediction;
-		})
-		.catch(error => {
-			console.error('error:', error);
-		});
+				document.getElementById('prediction').textContent = data.prediction;
+			})
+			.catch(error => {
+				console.error('error:', error);
+			});
+		} else {
+			alert("DL Score input must be 0-1");
+		}
 	} else {
 		alert("Long-axis diameter input must be 1-10cm");
 	}
