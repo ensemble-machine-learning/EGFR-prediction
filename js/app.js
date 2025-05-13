@@ -14,8 +14,8 @@ function reset() {
 function predict() {
 			
 	let input = [];
-	var Long = document.getElementById('DL_Score').value
-	var DL = document.getElementById('Long-axis_diamater').value
+	var Long = document.getElementById('Long-axis_diamater').value
+	var DL = document.getElementById('DL_Score').value
 	var texture = document.querySelector('input[type="radio"][name="Texture"]:checked').value;
 	var Bubblelike_lucency = document.querySelector('input[type="radio"][name="Bubblelike_lucency"]:checked').value;
 	var air = document.querySelector('input[type="radio"][name="Air_bronchogram"]:checked').value;
@@ -34,7 +34,7 @@ function predict() {
 	// console.log(smoke)
 				
 	if (Long.trim() != "" && parseFloat(Long) >= 1 && parseFloat(Long) <= 10) {
-		if(parseFloat(DL) > 0 && parseFloat(DL) < 1){
+		if(DL.trim() != "" && parseFloat(DL) > 0 && parseFloat(DL) < 1){
 			input.push(parseFloat(Long))
 			input.push(parseFloat(texture))
 			input.push(parseFloat(Bubblelike_lucency))
