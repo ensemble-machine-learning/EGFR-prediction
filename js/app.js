@@ -59,9 +59,9 @@ function predict() {
 				console.error('error:', error);
 			});
 		} else {
-			alert("DL Score input must be 0-1");
+			alert("Long-axis diameter input must be 1-10cm");
 		}
 	} else {
-		alert("Long-axis diameter input must be 1-10cm");
+		alert("DL Score input must be 0-1");
 	}
 }
