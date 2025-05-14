@@ -35,6 +35,7 @@ function predict() {
 				
 	if (DL.trim() != "" && parseFloat(DL) > 0 && parseFloat(DL) < 1) {
 		if(Long.trim() != "" && parseFloat(Long) >= 1 && parseFloat(Long) <= 10){
+			input.push(parseFloat(DL))
 			input.push(parseFloat(Long))
 			input.push(parseFloat(texture))
 			input.push(parseFloat(Bubblelike_lucency))
