@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>EGFR</title>
+		<link rel="stylesheet" type="text/css" href="css/app.css"/>
+		<script src="js/app.js"></script>
+
+	</head>
+	<body>
+		<div id="top">
+			<p id="title">
+				Online web calculator of ensemble machine learning model for predicting EGFR mutation status in lung adenocarcinoma
+			</p>
+		</div>
+		<div id="left">
+			<div id="input1">
+				<label for="DL_Score">DL Score:</label>
+				<input type="number" id="DL_Score" required>
+			</div>
+			<div id="input1">
+				<label for="Long-axis_diamater">Long-axis diameter (cm):</label>
+				<input type="number" id="Long-axis_diamater" required>
+			</div>
+			<div id="input">
+				<label for="Texture">Texture :</label>
+				<div class="radio-group">
+				    <label>
+				        <input type="radio" name="Texture" value="0" checked>
+				        subsolid
+				    </label>
+				    <label id="label2">
+				        <input type="radio" name="Texture" value="1">
+				        solid
+				    </label>
+				</div>
+			</div>
+			<div id="input">
+				<label for="Bubblelike_lucency">Bubblelike lucency :</label>
+				<!-- <input type="number" id="Bubblelike_lucency" required> -->
+				<div class="radio-group">
+				    <label>
+				        <input type="radio" name="Bubblelike_lucency" value="0" checked>
+				        absent
+				    </label>
+				    <label id="label2">
+				        <input type="radio" name="Bubblelike_lucency" value="1">
+				        present
+				    </label>
+				</div>
+			</div>
+			<div id="input">
+				<label for="Air bronchogram">Air bronchogram :</label>
+				<!-- <input type="number" id="Air bronchogram" required> -->
+				<div class="radio-group">
+				    <label>
+				        <input type="radio" name="Air_bronchogram" value="0" checked>
+				        absent
+				    </label>
+				    <label id="label2">
+				        <input type="radio" name="Air_bronchogram" value="1">
+				        present
+				    </label>
+				</div>
+			</div>
+			<div id="input">
+				<label for="Vascular convergence">Vascular convergence  :</label>
+				<!-- <input type="number" id="Vascular convergence" required> -->
+				<div class="radio-group">
+				    <label>
+				        <input type="radio" name="Vascular_convergence" value="0" checked>
+				        absent
+				    </label>
+				    <label id="label2">
+				        <input type="radio" name="Vascular_convergence" value="1">
+				        present
+				    </label>
+				</div>
+			</div>
+			<div id="input">
+				<label for="Pleural retraction">Pleural retraction :</label>
+				<!-- <input type="number" id="Pleural retraction" required> -->
+				<div class="radio-group">
+				    <label>
+				        <input type="radio" name="Pleural_retraction" value="0" checked>
+				        absent
+				    </label>
+				    <label id="label2">
+				        <input type="radio" name="Pleural_retraction" value="1">
+				        present
+				    </label>
+				</div>
+			</div>
+			<div id="input">
+				<label for="SEX">Sex :</label>
+				<!-- <input type="number" id="SEX" required> -->
+				<div class="radio-group">
+				    <label>
+				        <input type="radio" name="Sex" value="1" checked>
+				        male
+				    </label>
+				    <label id="label2">
+				        <input type="radio" name="Sex" value="2">
+				        female
+				    </label>
+				</div>
+			</div>
+			<div id="input">
+				<label for="Smoke history">Smoking history :</label>
+				<!-- <input type="number" id="Smoke history" required> -->
+				<div class="radio-group">
+				    <label>
+				        <input type="radio" name="Smoke_history" value="0" checked>
+				        never
+				    </label>
+				    <label id="label2">
+				        <input type="radio" name="Smoke_history" value="1">
+				        current or former
+				    </label>
+				</div>
+			</div>
+			
+			<button type="button" id="reset" onclick="reset()">reset</button>
+			<button type="button" id="predict" onclick="predict()">predict</button>
+		</div>
+		<div id="right">
+			<div id="image">
+				<p>Feature Importance</p>
+				<img src="img/feature_importance.png"/>
+			</div>
+			<div id="result">
+				<h3>Prediction</h3>
+				<p class="inline-p">The prediction of EGFR-mutant is:</p><p id="prediction" class="inline-p"></p>
+			</div>
+		</div>
+	
+		
+	</body>
+</html>
