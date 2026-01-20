@@ -44,7 +44,7 @@ function predict() {
 			input.push(parseFloat(Pleural))
 			input.push(parseFloat(sex))
 			input.push(parseFloat(smoke))
-			fetch('https://a262bb6feblc.ngrok-free.app/predict', {
+			fetch('https://8bf889c9e2b6.ngrok-free.app/predict', {
 				method: 'POST',
 				headers: {
 			    	'Content-Type': 'application/json'
